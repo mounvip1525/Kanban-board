@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="checklist.svg">
+    <title>Kanban Board</title>
+</head>
+<body>
+    <h1 class="main-title">Kanban Board</h1>
+    <div class="drag-container">
+        <ul class="drag-list">
+            <!-- backlog column -->
+            <li class="drag-column backlog-column">
+                <span class="header">
+                    <h1>Backlog</h1>
+                </span>
+                <!-- backlog content -->
+                <div id="backlog-content">
+                    <ul class="drag-item-list" id="backlog-list">
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+                <div class="add-btn-group">
+                    <div class="add-button">
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Item</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- progress column -->
+            <li class="drag-column progress-column">
+                <span class="header">
+                    <h1>Progress</h1>
+                </span>
+                <!-- progress content -->
+                <div id="progress-content">
+                    <ul class="drag-item-list" id="progress-list">
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+                <div class="add-btn-group">
+                    <div class="add-button">
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Item</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- complete column -->
+            <li class="drag-column complete-column">
+                <span class="header">
+                    <h1>Complete</h1>
+                </span>
+                <!-- complete content -->
+                <div id="complete-content">
+                    <ul class="drag-item-list" id="complete-list">
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+                <div class="add-btn-group">
+                    <div class="add-button">
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Item</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- onhold column -->
+            <li class="drag-column onhold-column">
+                <span class="header">
+                    <h1>On Hold</h1>
+                </span>
+                <!-- onhold content -->
+                <div id="onhold-content">
+                    <ul class="drag-item-list" id="onhold-list">
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                        <li class="drag-item">Testing</li>
+                    </ul>
+                </div>
+                <div class="add-btn-group">
+                    <div class="add-button">
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Item</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
