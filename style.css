@@ -14,7 +14,7 @@ body{
     min-height:100vh;
     background:grey;
     color:white;
-    overflow: hidden;
+    overflow-y: hidden;
     font-family:Qwicksand,sans-serif;
 }
 h1{
@@ -34,6 +34,8 @@ hr{
 }
 ul{
     list-style-type:none;
+    margin:0;
+    padding:0;
 }
 .drag-container{
     margin:20px;
@@ -112,5 +114,77 @@ ul{
 }
 
 .drag-item{
-    
+    margin:10px;
+    padding:10px;
+    line-height:1.5rem;
+    height:fit-content;
+    background-color:rgba(0,0,0,0.8);
+    border-radius: 10px;
+    letter-spacing: 1px;
+    cursor:pointer;
 }
+.drag-item:focus{
+    outline:none;
+    background-color:white;
+    color:black;
+}
+
+.add-btn-group{
+    display:flex;
+    justify-content: space-between;
+}
+.add-btn{
+    margin:10px;
+    padding:5px 10px;
+    display:flex;
+    align-items: center;
+    cursor:pointer;
+    border-radius: 5px;
+    width:fit-content;
+    transition:all 0.3s ease-in;
+    user-select: none;
+}
+.add-btn:hover{
+    background-color: rgba(255,255,255,0.9);
+    color:black;
+}
+.add-btn:active{
+    transform:scale(0.97);
+}
+.solid{
+    display:none;
+}
+.solid:hover{
+    transition:unset;
+    filter:brightness(95%);
+    color:white;
+}
+.plus-sign{
+    font-size:1.5rem;
+    margin-right: 5px;
+    position:relative;
+    top:-3px;
+}
+.add-container{
+    margin: 10px;
+    padding:5px 10px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.9);
+    min-height:50px;
+    display:none;
+}
+.add-item {
+    width: 100%;
+    min-height: 50px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px auto;
+    resize: none;
+    color: black;
+    padding: 10px;
+  }
+  
+  .add-item:focus {
+    outline: none;
+  }
