@@ -90,6 +90,32 @@ function updateDOM(){
      onHoldListArray.forEach((onHoldItem,index)=>{
          createItemEl(onHoldList,3 ,onHoldItem,index);
      });
+     //Run getSavedColumns only once, update local storage
+     updatedOnLoad=true;
+     updateSavedColumns();
+}
+
+//Allow arrays to reflect the drag and drop items
+function rebuildArrays(){
+    // console.log(backlogList.children);
+    // console.log(progressList.children);
+    backlogListArray=[];
+    for(let i=0;i<backlogList.children.length;i++){
+        backlogListArray.push(backlogList.children[i].textContent);
+    }
+    progressListArray=[];
+    for(let i=0;i<progressList.children.length;i++){
+        progressListArray.push(progressList.children[i].textContent);
+    }
+    completeListArray=[];
+    for(let i=0;i<completeList.children.length;i++){
+        completeListArray.push(completeList.children[i].textContent);
+    }
+    onHoldListArray=[];
+    for(let i=0;i<onHoldList.children.length;i++){
+        onHoldListArray.push(onHoldList.children[i].textContent);
+    }
+    updateDOM(); 
 }
 
 //When item starts dragging, call this function 
@@ -114,8 +140,10 @@ function drop(e){
     listColumns.forEach(listColumn=>{
         listColumn.classList.remove('over');
     });
+    //Append the dragged item into the dropped column
     const parent=listColumns[currentColumn];
     parent.appendChild(draggedItem);
+    rebuildArrays();
 }
 updateDOM();
 
