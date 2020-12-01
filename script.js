@@ -1,5 +1,5 @@
 //Item Lists
-const listItems=document.querySelectorAll('.drag-item-list');
+const listColumns=document.querySelectorAll('.drag-item-list');
 const backlogList=document.getElementById('backlog-list');
 const progressList=document.getElementById('progress-list');
 const completeList=document.getElementById('complete-list');
@@ -18,6 +18,9 @@ let onHoldListArray=[];
 let listArrays=[];
 
 let updatedOnLoad=false;
+
+let draggedItem;
+let currentColumn;
 
 //Retrieve from LocalStorage if available or set default values
 function getSavedItems(){
@@ -58,6 +61,8 @@ function createItemEl(columnName,columnNo,item,index){
     const listEl=document.createElement('li');
     listEl.classList.add('drag-item');
     listEl.textContent=item;
+    listEl.draggable=true;
+    listEl.setAttribute('ondragstart','drag(event)')
     columnName.append(listEl);
 }
 function updateDOM(){
@@ -73,19 +78,44 @@ function updateDOM(){
      //progress column
      progressList.textContent=''; //set all the initial items ie. testing to dissappear
      progressListArray.forEach((progressItem,index)=>{
-         createItemEl(progressList,0,progressItem,index);
+         createItemEl(progressList,1,progressItem,index);
      });
       //complete column
     completeList.textContent=''; //set all the initial items ie. testing to dissappear
     completeListArray.forEach((completeItem,index)=>{
-        createItemEl(completeList,0,completeItem,index);
+        createItemEl(completeList,2,completeItem,index);
     });
      //onHold column
      onHoldList.textContent=''; //set all the initial items ie. testing to dissappear
      onHoldListArray.forEach((onHoldItem,index)=>{
-         createItemEl(onHoldList,0,onHoldItem,index);
+         createItemEl(onHoldList,3 ,onHoldItem,index);
      });
 }
 
+//When item starts dragging, call this function 
+function drag(e){
+    draggedItem=e.target;
+    // console.log(draggedItem);
+}
+//Enable the droppability in the column
+function allowDrop(e){
+    e.preventDefault();
+}
+//When the dragged item enters a valid droppable area
+function dragEnter(column){
+    // console.log(listColumns[column])
+    listColumns[column].classList.add('over');
+    currentColumn=column;
+}
+//Dropping an item in the column
+function drop(e){
+    e.preventDefault();
+    //Remove the padding (highlight)
+    listColumns.forEach(listColumn=>{
+        listColumn.classList.remove('over');
+    });
+    const parent=listColumns[currentColumn];
+    parent.appendChild(draggedItem);
+}
 updateDOM();
 
