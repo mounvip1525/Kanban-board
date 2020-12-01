@@ -8,7 +8,7 @@ const onHoldList=document.getElementById('on-hold-list');
 //Button groups
 const addBtns=document.querySelectorAll('.add-btn:not(.solid)');
 const saveItemBtns=document.querySelectorAll('.solid');
-const addItemContainer=document.querySelectorAll('.add-container');
+const addItemContainers=document.querySelectorAll('.add-container');
 const addItems=document.querySelectorAll('.add-item');
 
 let backlogListArray=[];
@@ -21,6 +21,28 @@ let updatedOnLoad=false;
 
 let draggedItem;
 let currentColumn;
+
+//Add to column, reset textbox
+function addToColumn(column){
+    // console.log(addItems[column].textContent);
+    const itemText=addItems[column].textContent;
+    const selectedArray=listArrays[column];
+    selectedArray.push(itemText);
+    addItems[column].textContent='';
+    updateDOM();
+}
+
+function showInputBox(column){
+    addBtns[column].style.visibility='hidden';
+    saveItemBtns[column].style.display='flex';
+    addItemContainers[column].style.display='flex';
+}
+function hideInputBox(column){
+    addBtns[column].style.visibility='visible';
+    saveItemBtns[column].style.display='none';
+    addItemContainers[column].style.display='none';
+    addToColumn(column);
+}
 
 //Retrieve from LocalStorage if available or set default values
 function getSavedItems(){

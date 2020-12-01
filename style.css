@@ -158,8 +158,9 @@ ul{
 }
 .solid:hover{
     transition:unset;
-    filter:brightness(95%);
+    filter:brightness(105%);
     color:white;
+    transform: scale(0.90);
 }
 .plus-sign{
     font-size:1.5rem;
@@ -172,7 +173,7 @@ ul{
     padding:5px 10px;
     border-radius: 10px;
     background-color: rgba(255,255,255,0.9);
-    min-height:50px;
+    min-height:100px;
     display:none;
 }
 .add-item {

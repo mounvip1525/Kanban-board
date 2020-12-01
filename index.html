@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link rel="icon" href="checklist.svg">
     <title>Kanban Board</title>
 </head>
+
 <body>
-    <h1 class="main-title">Kanban Board</h1><hr>
+    <h1 class="main-title">Kanban Board</h1>
+    <hr>
     <div class="drag-container">
         <ul class="drag-list">
             <!-- backlog column -->
@@ -18,7 +21,8 @@
                 </span>
                 <!-- backlog content -->
                 <div id="backlog-content">
-                    <ul class="drag-item-list" id="backlog-list" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(0)">
+                    <ul class="drag-item-list" id="backlog-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                        ondragenter="dragEnter(0)">
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
@@ -26,16 +30,16 @@
                     </ul>
                 </div>
                 <div class="add-btn-group">
-                    <div class="add-button">
+                    <div class="add-btn" onclick="showInputBox(0)">
                         <span class="plus-sign">+</span>
                         <span>Add Item</span>
                     </div>
-                    <div class="add-btn solid">
+                    <div class="add-btn solid" onclick="hideInputBox(0)">
                         <span>Save Item</span>
                     </div>
-                    <div class="add-container">
-                        <div class="add-item"></div>
-                    </div>
+                </div>
+                <div class="add-container" contenteditable="true">
+                    <div class="add-item"></div>
                 </div>
             </li>
 
@@ -46,7 +50,8 @@
                 </span>
                 <!-- progress content -->
                 <div id="progress-content">
-                    <ul class="drag-item-list" id="progress-list" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(1)">
+                    <ul class="drag-item-list" id="progress-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                        ondragenter="dragEnter(1)">
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
@@ -54,17 +59,18 @@
                     </ul>
                 </div>
                 <div class="add-btn-group">
-                    <div class="add-button">
+                    <div class="add-btn" onclick="showInputBox(1)">
                         <span class="plus-sign">+</span>
                         <span>Add Item</span>
                     </div>
-                    <div class="add-btn solid">
+                    <div class="add-btn solid" onclick="hideInputBox(1)">
                         <span>Save Item</span>
                     </div>
-                    <div class="add-container">
-                        <div class="add-item"></div>
-                    </div>
                 </div>
+                <div class="add-container" contenteditable="true">
+                    <div class="add-item"></div>
+                </div>
+
             </li>
 
             <!-- complete column -->
@@ -74,7 +80,8 @@
                 </span>
                 <!-- complete content -->
                 <div id="complete-content">
-                    <ul class="drag-item-list" id="complete-list" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(2)">
+                    <ul class="drag-item-list" id="complete-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                        ondragenter="dragEnter(2)">
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
@@ -82,17 +89,18 @@
                     </ul>
                 </div>
                 <div class="add-btn-group">
-                    <div class="add-button">
+                    <div class="add-btn" onclick="showInputBox(2)">
                         <span class="plus-sign">+</span>
                         <span>Add Item</span>
                     </div>
-                    <div class="add-btn solid">
+                    <div class="add-btn solid" onclick="hideInputBox(2)">
                         <span>Save Item</span>
                     </div>
-                    <div class="add-container">
-                        <div class="add-item"></div>
-                    </div>
                 </div>
+                <div class="add-container" contenteditable="true">
+                    <div class="add-item"></div>
+                </div>
+
             </li>
 
             <!-- onhold column -->
@@ -102,7 +110,8 @@
                 </span>
                 <!-- on-hold content -->
                 <div id="on-hold-content">
-                    <ul class="drag-item-list" id="on-hold-list" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(3)"> 
+                    <ul class="drag-item-list" id="on-hold-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                        ondragenter="dragEnter(3)">
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
                         <li class="drag-item">Testing</li>
@@ -110,20 +119,22 @@
                     </ul>
                 </div>
                 <div class="add-btn-group">
-                    <div class="add-button">
+                    <div class="add-btn" onclick="showInputBox(3)">
                         <span class="plus-sign">+</span>
                         <span>Add Item</span>
                     </div>
-                    <div class="add-btn solid">
+                    <div class="add-btn solid" onclick="hideInputBox(3)">
                         <span>Save Item</span>
                     </div>
-                    <div class="add-container">
-                        <div class="add-item"></div>
-                    </div>
                 </div>
+                <div class="add-container" contenteditable="true">
+                    <div class="add-item"></div>
+                </div>
+
             </li>
         </ul>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
