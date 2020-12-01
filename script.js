@@ -20,6 +20,7 @@ let listArrays=[];
 let updatedOnLoad=false;
 
 let draggedItem;
+let dragging=false;
 let currentColumn;
 
 function filterArray(array){
@@ -44,11 +45,15 @@ function updateItem(id,column){
     console.log(selectedArray);
     const selectedColumnEl=listColumns[column].children;
     console.log(selectedColumnEl[id].textContent);
-    if(!selectedColumnEl[id].textContent){
-        delete selectedArray[id];
+    if(!dragging){
+        if(!selectedColumnEl[id].textContent){ //if empty
+            delete selectedArray[id];
+        } else{
+            selectedArray[id]=selectedColumnEl[id].textContent;
+        }
+        console.log(selectedArray);
+        updateDOM();
     }
-    console.log(selectedArray);
-    updateDOM();
 }
 
 function showInputBox(column){
@@ -178,6 +183,7 @@ function drag(e){
 //Enable the droppability in the column
 function allowDrop(e){
     e.preventDefault();
+    dragging=true;
 }
 //When the dragged item enters a valid droppable area
 function dragEnter(column){
@@ -195,6 +201,8 @@ function drop(e){
     //Append the dragged item into the dropped column
     const parent=listColumns[currentColumn];
     parent.appendChild(draggedItem);
+    //Dragging complete
+    dragging=false;
     rebuildArrays();
 }
 updateDOM();
