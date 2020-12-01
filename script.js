@@ -156,22 +156,28 @@ function updateDOM(){
 function rebuildArrays(){
     // console.log(backlogList.children);
     // console.log(progressList.children);
-    backlogListArray=[];
-    for(let i=0;i<backlogList.children.length;i++){
-        backlogListArray.push(backlogList.children[i].textContent);
-    }
-    progressListArray=[];
-    for(let i=0;i<progressList.children.length;i++){
-        progressListArray.push(progressList.children[i].textContent);
-    }
-    completeListArray=[];
-    for(let i=0;i<completeList.children.length;i++){
-        completeListArray.push(completeList.children[i].textContent);
-    }
-    onHoldListArray=[];
-    for(let i=0;i<onHoldList.children.length;i++){
-        onHoldListArray.push(onHoldList.children[i].textContent);
-    }
+    // backlogListArray=[];
+    // for(let i=0;i<backlogList.children.length;i++){
+    //     backlogListArray.push(backlogList.children[i].textContent);
+    // }
+    // progressListArray=[];
+    // for(let i=0;i<progressList.children.length;i++){
+    //     progressListArray.push(progressList.children[i].textContent);
+    // }
+    // completeListArray=[];
+    // for(let i=0;i<completeList.children.length;i++){
+    //     completeListArray.push(completeList.children[i].textContent);
+    // }
+    // onHoldListArray=[];
+    // for(let i=0;i<onHoldList.children.length;i++){
+    //     onHoldListArray.push(onHoldList.children[i].textContent);
+    // }
+    
+    // console.log(backlogList.children)
+    backlogListArray=Array.from(backlogList.children).map(i => i.textContent);
+    progressListArray=Array.from(progressList.children).map(i => i.textContent);
+    completeListArray=Array.from(completeList.children).map(i => i.textContent);
+    onHoldListArray=Array.from(onHoldList.children).map(i => i.textContent);
     updateDOM(); 
 }
 
