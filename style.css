@@ -3,16 +3,16 @@
     box-sizing: border-box;
 }
 :root{
-  --column-1: #a2622d;
-  --column-2: #1b6161;
-  --column-3: #248224;
-  --column-4: #a22d22;
+  --column-1: #0D232F;
+  --column-2: #113a50;
+  --column-3: #2d5b74;
+  --column-4: #6C8FA2;
 }
 body{
     margin:0;
     padding:0;
     min-height:100vh;
-    background:grey;
+    background:-webkit-linear-gradient(90deg,#6C8FA2,#18506e,#467087,#6C8FA2);
     color:white;
     overflow-y: hidden;
     font-family:Qwicksand,sans-serif;
