@@ -12,7 +12,7 @@ body{
     margin:0;
     padding:0;
     min-height:100vh;
-    background:-webkit-linear-gradient(90deg,#6C8FA2,#18506e,#467087,#6C8FA2);
+    background:-webkit-linear-gradient(90deg,#18506e,#467087,#6C8FA2);
     color:white;
     overflow-y: hidden;
     font-family:Qwicksand,sans-serif;
@@ -43,6 +43,7 @@ ul{
 .drag-list{
     display:flex;
     align-items: flex-start;
+    margin:0 20px;
 }
 .drag-column{
     flex:1;
@@ -174,6 +175,7 @@ ul{
     border-radius: 10px;
     background-color: rgba(255,255,255,0.9);
     min-height:100px;
+    border:3px solid var(--column-3);
     display:none;
 }
 .add-item {
@@ -190,4 +192,7 @@ ul{
   
   .add-item:focus {
     outline: none;
+  }
+  .add-container:focus{
+      outline:none;
   }
